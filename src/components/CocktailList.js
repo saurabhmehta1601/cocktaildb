@@ -3,7 +3,7 @@ import Cocktail from './Cocktail'
 import Loading from './Loading'
 import { useGlobalContext } from '../context'
 
-const CocktailList = () => {
+const CocktailList = ({cocktails}) => {
   return (
     <div>
       <h2>cocktail list component</h2>
