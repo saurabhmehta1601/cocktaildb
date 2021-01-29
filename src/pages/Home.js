@@ -37,7 +37,9 @@ const Home = () => {
 
     }setLoading(false)
   }
+  
     getDrinks();
+
   }, [searchTerm]);
   return (
     <main>
