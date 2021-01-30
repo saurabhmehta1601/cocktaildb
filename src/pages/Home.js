@@ -4,7 +4,7 @@ import SearchForm from "../components/SearchForm";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("mar");
+  const [searchTerm, setSearchTerm] = useState("");
   const [cocktails, setCocktails] = useState([]);
 
   useEffect(() => {
@@ -16,7 +16,6 @@ const Home = () => {
         );
         const data = await response.json();
         const { drinks } = data;
-        console.log(drinks);
         if (drinks) {
         const newCocktails =drinks.map((item) => {
             const {
@@ -41,9 +40,11 @@ const Home = () => {
     getDrinks();
 
   }, [searchTerm]);
+
+
   return (
     <main>
-      <SearchForm setSearchTerm={searchTerm} />
+      <SearchForm setSearchTerm={setSearchTerm} />
       <CocktailList loading={loading} cocktails={cocktails} />
     </main>
   );
